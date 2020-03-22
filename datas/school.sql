@@ -1,6 +1,6 @@
 create table if not exists students (
     students_id serial primary key,
-    full_name varchar(100) not null,
+    full_name varchar(50) not null,
     email varchar(50),
     students_address varchar(100),
     students_gender varchar(7),
@@ -9,7 +9,7 @@ create table if not exists students (
 
 create table if not exists teachers (
     teachers_id serial primary key,
-    teacher_name varchar(100) not null,
+    teacher_name varchar(50) not null,
     email varchar(50) not null,
     gender varchar(7),
     teachers_expertise varchar(50) not null
@@ -23,7 +23,7 @@ create table if not exists subjects (
 create table if not exists class (
     class_id serial primary key,
     class_date date,
-    class_time time,
+    class_time varchar(10),
     room varchar(10),
     subjects_id serial references subjects(subjects_id),
     teachers_id serial references teachers(teachers_id)
