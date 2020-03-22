@@ -1,1 +1,1 @@
-# Manage My School
+# Managing My School For Free
