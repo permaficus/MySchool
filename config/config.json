@@ -1,0 +1,13 @@
+{
+  "port": "3000",
+  "pg_user": "node",
+  "pg_db_name": "myschooldb",
+  "pg_server": "localhost",
+  "pg_password": "hacktiv8tugas",
+  "pg_port": "5432",
+  "db_created": "yes",
+  "database": "postgres",
+  "db_path": "./database/",
+  "router": "../router/index.js",
+  "views": "../views/index.ejs"
+}

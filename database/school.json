@@ -1,0 +1,22 @@
+[
+  {
+    "table": "students",
+    "values": []
+  },
+  {
+    "table": "teachers",
+    "values": []
+  },
+  {
+    "table": "subjects",
+    "values": [{"subjects_id": 1, "subjects_name":"Javascript"}, {"subjects_id": 2, "subjects_name":"Golang"}]
+  },
+  {
+    "table": "class",
+    "values": []
+  },
+  {
+    "table": "class_in_session",
+    "values": []
+  }
+]

@@ -1,0 +1,47 @@
+<section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <% if (callout) { %>
+        <div class="callout callout-success">
+          <h4><%= callout.status.toUpperCase() %></h4>
+          <%  
+            let calloutMessage = '';
+            switch (Object.keys(callout)[0]) {
+              case 'updating' : calloutMessage = `You're successfully updating ${callout.updating}`; break;
+              case 'deleting' : calloutMessage = `You're successfully removing ${callout.deleting} from the list`;
+            }
+          %>
+          <p><%= calloutMessage %></p>
+        </div>
+        <% } %>
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">Subjects List</h3>
+          </div><!-- /.box-header -->
+          <div class="box-body">
+            <table id="example2" class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>Subjects ID</th>
+                  <th>Subjects Name</th>
+                  <th style="text-align: center;">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% if (data) {data.forEach(subjects => { %>
+                <tr>
+                  <td><%= subjects.subjects_id %></td>
+                  <td><%= subjects.subjects_name %></td>
+                  <td style="text-align: center;">
+                    <a href="/subjects/edit?id=<%= subjects.subjects_id %>" class="glyphicon glyphicon-edit"></a>
+                    <a href="/subjects/delete?id=<%= subjects.subjects_id %>" class="glyphicon glyphicon-remove"></a>
+                  </td>
+                </tr>
+                <% })} %>
+              </tbody>
+            </table>
+          </div><!-- /.box-body -->
+        </div><!-- /.box -->
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </section><!-- /.content -->

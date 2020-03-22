@@ -1,0 +1,77 @@
+<section class="content">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-6">
+        <!-- general form elements -->
+        <div class="box box-primary">
+          <div class="box-header">
+            <h3 class="box-title">* Required Field</h3>
+          </div><!-- /.box-header -->
+          <!-- form start -->
+          <form role="form" action="/students/add" method="POST">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Student Name</label>
+                <input type="text" class="form-control" name="full_name" id="full_name" placeholder="Enter student full name">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Address</label>
+                <input type="text" class="form-control" name="student_address" id="students_address" placeholder="Enter address">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">E-Mail</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter E-mail">
+              </div>
+              <div class="form-group">
+                <label>Gender</label>
+                <select name="gender" class="form-control">
+                  <option value="Male">Male</option>
+                  <option values="Female">Female</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Birth Date</label>
+                <input type="text" class="form-control" name="birth_date" id="birt_date" placeholder="Enter student full name">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">Student Photo</label>
+                <input type="file" id="exampleInputFile">
+                <p class="help-block">Example block-level help text here.</p>
+              </div>
+            </div><!-- /.box-body -->
+
+            <div class="box-footer">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div><!-- /.box -->
+      </div><!--/.col (left) -->
+      <% if (callout) { %>
+      <% 
+        let calloutMessage = '', alertType = '', alertIcon = '';
+        switch (callout.status) {
+          case 'succeeded' : {
+            calloutMessage = `You're successfully adding new student : <b>${callout.adding}</b>`;
+            alertType = 'success';
+            alertIcon = 'fa-check';
+          }; break;
+
+          case 'error' : {
+            calloutMessage = `You are required to fill all the information that wee need. Please check your input again, and try again.`;
+            alertType = 'danger';
+            alertIcon = 'fa-ban'
+          }; break;             
+        }
+      %>
+      <!--.col (right) -->
+      <div class="col-md-6">
+        <div class="alert alert-<%=alertType%> alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <h4>	<i class="icon fa <%= alertIcon %>"></i><%= callout.status.toUpperCase() %> !</h4>
+          <%= calloutMessage %>
+        </div>
+      </div>
+      <!--/.col (right) -->
+      <% } %>
+    </div>   <!-- /.row -->
+  </section><!-- /.content -->
