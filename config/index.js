@@ -3,7 +3,7 @@
 const fs = require('fs');
 const pgtool = require('pgtools')
 const {Pool} = require('pg')
-const sql = require('../database/school.js')
+const sql = require('../datas/school.js')
 
 class DatabaseSetup {
     constructor(ListeningPort = 3000, User, databaseName, Password, DatabasePort, HostName = 'localhost', DefaultDB, dbExist = 'yes') {
